@@ -218,7 +218,7 @@ class ImagePatcherTool(QDialog):
 
     def select_input_files(self):
         file_dialog = QFileDialog()
-        self.input_files, _ = file_dialog.getOpenFileNames(self, "Select Input Files", "", "Image Files (*.png *.jpg *.bmp *.tif *.tiff)")
+        self.input_files, _ = file_dialog.getOpenFileNames(self, "Select Input Files", "", "Image Files (*.png *.jpg *.jpeg *.bmp *.tif *.tiff)")
         self.input_label.setText(f"Input Files: {len(self.input_files)} selected")
         QApplication.processEvents()
         self.process_tiff_files()

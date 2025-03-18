@@ -464,7 +464,7 @@ class ImageAnnotator(QMainWindow):
 
 
     def load_missing_images(self, missing_images):
-        files, _ = QFileDialog.getOpenFileNames(self, "Select Missing Images", "", "Image Files (*.png *.jpg *.bmp *.tif *.tiff *.czi)")
+        files, _ = QFileDialog.getOpenFileNames(self, "Select Missing Images", "", "Image Files (*.png *.jpg *jpeg *.bmp *.tif *.tiff *.czi)")
         if files:
             images_loaded = 0
             for file_path in files:
@@ -912,7 +912,7 @@ class ImageAnnotator(QMainWindow):
 
 
     def open_images(self):
-        file_names, _ = QFileDialog.getOpenFileNames(self, "Open Images", "", "Image Files (*.png *.jpg *.bmp *.tif *.tiff *.czi)")
+        file_names, _ = QFileDialog.getOpenFileNames(self, "Open Images", "", "Image Files (*.png *.jpg *jpeg *.bmp *.tif *.tiff *.czi)")
         if file_names:
             self.image_list.clear()
             self.image_paths.clear()
@@ -2475,7 +2475,7 @@ class ImageAnnotator(QMainWindow):
     def add_images(self):
         if not self.image_label.check_unsaved_changes():    
             return
-        file_names, _ = QFileDialog.getOpenFileNames(self, "Add Images", "", "Image Files (*.png *.jpg *.bmp *.tif *.tiff *.czi)")
+        file_names, _ = QFileDialog.getOpenFileNames(self, "Add Images", "", "Image Files (*.png *.jpg *jpeg *.bmp *.tif *.tiff *.czi)")
         if file_names:
             self.add_images_to_list(file_names)
             
